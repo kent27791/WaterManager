@@ -29,18 +29,15 @@ namespace WaterManager
 
             buttonCheckInfo.Click += (s, e) =>
             {
-                ucTextBoxCustomerId.ValidateLength(6).ValidateIsNumber();
-
-                ucTextBoxCustomerName.ValidateIsEmpty();
-
-                ucTextBoxCustomerAddress.ValidateIsEmpty();
-
-                ucTextBoxCustomerAddress.ValidateIsEmpty();
-
-                ucTextBoxWaterNumberOld.ValidateIsNumber();
-
-                ucTextBoxWaterNumberNew.ValidateIsNumber().ValidateIsMoreThan(ucTextBoxWaterNumberOld);
-
+                if (ucTextBoxCustomerId.ValidateLength(6).ValidateIsNumber() != null && 
+                    ucTextBoxCustomerName.ValidateIsEmpty() != null &&
+                    ucTextBoxCustomerAddress.ValidateIsEmpty() != null &&
+                    ucTextBoxCustomerAddress.ValidateIsEmpty() != null &&
+                    ucTextBoxWaterNumberOld.ValidateIsNumber() != null &&
+                    ucTextBoxWaterNumberNew.ValidateIsNumber().ValidateIsMoreThan(ucTextBoxWaterNumberOld) != null)
+                {
+                    buttonChecking.Enabled = true;
+                }
             };
 
             buttonChecking.Click += (s, e) =>
@@ -94,6 +91,8 @@ namespace WaterManager
             ucTextBoxNumberCheckout.TextBoxField.Enabled = false;
 
             textBoxAddressChecking.Enabled = false;
+
+            buttonChecking.Enabled = false;
         }
     }
 }
