@@ -32,7 +32,6 @@ namespace WaterManager
                 if (ucTextBoxCustomerId.ValidateLength(6).ValidateIsNumber() != null && 
                     ucTextBoxCustomerName.ValidateIsEmpty() != null &&
                     ucTextBoxCustomerAddress.ValidateIsEmpty() != null &&
-                    ucTextBoxCustomerAddress.ValidateIsEmpty() != null &&
                     ucTextBoxWaterNumberOld.ValidateIsNumber() != null &&
                     ucTextBoxWaterNumberNew.ValidateIsNumber().ValidateIsMoreThan(ucTextBoxWaterNumberOld) != null)
                 {
